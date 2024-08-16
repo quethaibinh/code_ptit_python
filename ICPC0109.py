@@ -1,16 +1,23 @@
-
 for _ in range(int(input())):
-    n = input()
-    a = list(int(i) for i in input().split())
-    print(a)
+    n = int(input())
+    a = list(map(int, input().split()))
     sum = 0
-    minSum = 100000000000000000000
-    tryy(0, sum, minSum)
-    print(minSum)
+    for _ in range(3):
+        min = 100000000000
+        index = 0
+        for i in range(len(a)):
+            if min >= a[i]: 
+                min = a[i]
+                index = i
+        sum += min
+        a.pop(index)
+        # print(*a)
+    print(sum)
+
 
 
 # 2
 # 7
-# 1 2 3 0 -1 8 10
+# 1 2 3 0 -1 8 10 
 # 7
 # 9 8 20 3 4 -1 0
